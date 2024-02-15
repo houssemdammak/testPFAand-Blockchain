@@ -34,14 +34,13 @@ const initContract = async (web3) => {
   return contract;
 };
 const createBin = async (contract, id, location, state, capacity, currentWeight) => {
-  // const web3 = await initWeb3(); // Initialize Web3 instance
-  //   const accounts = await web3.eth.getAccounts(); // Use web3 instance to access getAccounts
-  //   console.log(accounts)
-  //   const senderAddress = accounts[0];
+  const web3 = await initWeb3(); // Initialize Web3 instance
+    const accounts = await web3.eth.getAccounts(); // Use web3 instance to access getAccounts
+    console.log(accounts)
+    const senderAddress = accounts[0];
   try {
     await contract.methods.createBin(id, location, state, capacity, currentWeight).send({ 
-      from: "0x202437a86e2649B190a0Fc6CbBbC21e75E21c28c",
-      to: "0x202437a86e2649B190a0Fc6CbBbC21e75E21c28c" 
+      from: senderAddress
   });  
     console.log("Bin created successfully!");
   } catch (error) {
@@ -49,3 +48,4 @@ const createBin = async (contract, id, location, state, capacity, currentWeight)
   }
 };
 export { initWeb3, initContract,createBin };
+

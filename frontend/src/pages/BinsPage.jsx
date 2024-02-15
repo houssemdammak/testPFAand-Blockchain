@@ -71,8 +71,6 @@ function BinDemo() {
   };
 
 
-
-
   const hideDialog = () => {
     setSubmitted(false);
     setProductDialog(false);
@@ -124,8 +122,8 @@ function BinDemo() {
           toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Bin Created', life: 3000 });
           /*----------------------------------------------------------------------------------------------------------------*/
           //hethya mta3 le blockchain
-          //  createBin(contract,1, product.location, product.status, product.capacity, product.currentWeight);
-           createBin(contract,6, "sfax", "empty", 100, 0);
+           createBin(contract,10, product.location, product.status, product.capacity, product.currentWeight);
+           //createBin(contract,9, "agereb", "empty", 100, 0);
 
           /*----------------------------------------------------------------------------------------------------------------*/
 

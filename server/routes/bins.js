@@ -4,7 +4,8 @@ const {
     getBin,
     createBin,
     deleteBin,
-    updateBin
+    updateBin,
+    deleteAllBins
 }=require('../controllers/BinController')
 
 const router = express.Router()
@@ -20,8 +21,11 @@ router.post('/',createBin)
 
 // DELETE a workout
 router.delete('/:id',deleteBin)
-
 // UPDATE a workout
 router.patch('/:id',updateBin)
+
+
+//delete all bins
+router.delete('/',deleteAllBins)
 
 module.exports = router

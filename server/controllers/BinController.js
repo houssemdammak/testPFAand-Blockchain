@@ -92,11 +92,22 @@ const updateBin = async (req, res) => {
 
   res.status(200).json(bin)
 }
+// delete all bins
+const deleteAllBins = async (req, res) => {
+  try {
+    const result = await Bin.deleteMany({});
+    res.status(200).json({ message: `${result.deletedCount} bin(s) deleted successfully` });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
+
 
 module.exports = {
   getBins,
   getBin,
   createBin,
   deleteBin,
-  updateBin
+  updateBin,
+  deleteAllBins
 }
